@@ -4,85 +4,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>New York City Roleplay</title>
+<title>New York City Roleplay | Official</title>
+
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
 
 body {
   font-family: Arial, sans-serif;
   background: #101827;
   color: white;
-  min-height: 100vh;
 }
 
 header {
-  padding: 25px 8%;
+  padding: 23px 8%;
   background: #172337;
   border-bottom: 1px solid #34445b;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.logo { font-size: 21px; font-weight: bold; }
-.logo span { color: #69a8ff; }
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo span { color: #e32626; }
+
+nav {
+  display: flex;
+  gap: 22px;
+  flex-wrap: wrap;
+}
 
 nav a {
   color: #c6d2e2;
   text-decoration: none;
-  margin-left: 20px;
   font-size: 14px;
+  transition: 0.2s;
 }
+
+nav a:hover { color: #e32626; }
 
 .hero {
   text-align: center;
-  padding: 85px 20px 65px;
+  padding: 95px 20px;
   background: linear-gradient(135deg,#172b46,#101827);
 }
 
-.hero h1 { font-size: 42px; margin-bottom: 15px; }
-.hero p { color: #b6c5d8; line-height: 1.7; }
+.hero h1 {
+  font-size: 43px;
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: #b6c5d8;
+  line-height: 1.8;
+}
 
 .btn {
   display: inline-block;
-  background: #347bd4;
+  background: #c91f27;
   color: white;
-  padding: 13px 25px;
-  margin-top: 25px;
+  padding: 14px 27px;
+  margin-top: 27px;
   border-radius: 7px;
   text-decoration: none;
   font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: #a71920;
+  transform: translateY(-2px);
 }
 
 .container {
-  max-width: 1050px;
-  margin: 50px auto;
-  padding: 0 20px;
+  max-width: 1100px;
+  margin: 65px auto;
+  padding: 0 22px;
+  scroll-margin-top: 30px;
 }
 
-h2 { margin-bottom: 25px; }
+h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+
+.section-description {
+  color: #aab9cb;
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
 
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 18px;
+  gap: 20px;
 }
 
 .card {
   background: #1c2a3d;
-  padding: 25px;
+  padding: 26px;
   border: 1px solid #34445b;
   border-radius: 12px;
-  transition: 0.2s;
+  transition: 0.25s;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  border-color: #69a8ff;
+  border-color: #e32626;
 }
 
-.card h3 { margin-bottom: 10px; }
-.card p { color: #aab9cb; font-size: 14px; line-height: 1.6; }
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 19px;
+}
+
+.card p {
+  color: #aab9cb;
+  font-size: 14px;
+  line-height: 1.8;
+}
 
 .card a {
   display: inline-block;
@@ -90,107 +141,233 @@ h2 { margin-bottom: 25px; }
   color: #80b5ff;
   text-decoration: none;
   font-weight: bold;
+  font-size: 14px;
+}
+
+.card a:hover { color: white; }
+
+.owner-card {
+  text-align: center;
+  padding: 35px 25px;
+}
+
+.owner-card h3 {
+  color: #e32626;
+  font-size: 23px;
+}
+
+.role {
+  display: inline-block;
+  background: #482126;
+  color: #ff8d94;
+  padding: 6px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 5px 0 17px;
+  letter-spacing: 1px;
+}
+
+.owner-card p {
+  font-size: 14px;
+}
+
+.about-box {
+  background: #1c2a3d;
+  border: 1px solid #34445b;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.about-box p {
+  color: #b6c5d8;
+  line-height: 1.9;
 }
 
 footer {
   text-align: center;
-  padding: 30px;
+  padding: 35px 20px;
   background: #172337;
   color: #91a1b6;
   font-size: 13px;
+  line-height: 2;
   margin-top: 70px;
 }
 
-@media(max-width:600px) {
-  header { flex-direction: column; gap: 15px; }
-  nav a { margin: 0 7px; }
-  .hero h1 { font-size: 30px; }
+@media(max-width:650px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .hero h1 { font-size: 31px; }
+  .hero { padding: 70px 20px; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-  <div class="logo">NEW YORK CITY <span>ROLEPLAY</span></div>
+  <div class="logo">
+    NEW YORK CITY <span>ROLEPLAY</span>
+  </div>
+
   <nav>
     <a href="#home">Home</a>
-    <a href="#links">Links</a>
+    <a href="#links">Community Links</a>
+    <a href="#ownership">Ownership</a>
     <a href="#about">About</a>
   </nav>
 </header>
 
 <section class="hero" id="home">
   <h1>New York City Roleplay</h1>
-  <p>Welcome to our official community dashboard.<br>
-  Access everything you need in one convenient location.</p>
+
+  <p>
+    Welcome to our official community dashboard.<br>
+    Access everything you need in one convenient location.
+  </p>
+
   <a class="btn" href="https://discord.gg/BtXPRqutu">
     Join Our Discord
   </a>
 </section>
 
 <main class="container" id="links">
+
   <h2>Community Navigation</h2>
+
+  <p class="section-description">
+    Access our official community resources and important information.
+  </p>
 
   <div class="grid">
 
     <div class="card">
       <h3>Announcements</h3>
-      <p>Stay updated with the latest community news.</p>
-      <a href="https://discord.com/channels/1530680190181834872/1530682819917910149">Open Announcements →</a>
+      <p>Stay informed about the latest community announcements and updates.</p>
+      <a href="https://discord.com/channels/1530680190181834872/1530682819917910149" target="_blank">View Announcements →</a>
     </div>
 
     <div class="card">
       <h3>Rules & Regulations</h3>
-      <p>Review our community rules and regulations.</p>
-      <a href="https://discord.gg/xqnPjf5Km">View Rules →</a>
+      <p>Review our community regulations and expectations.</p>
+      <a href="https://discord.gg/xqnPjf5Km" target="_blank">View Rules →</a>
     </div>
 
     <div class="card">
       <h3>Assistance Centre</h3>
-      <p>Contact our support team for assistance.</p>
-      <a href="https://discord.gg/PZ66uWpNM">Get Assistance →</a>
+      <p>Contact our support team for questions, concerns and assistance.</p>
+      <a href="https://discord.gg/PZ66uWpNM" target="_blank">Get Assistance →</a>
     </div>
 
     <div class="card">
       <h3>Sessions</h3>
-      <p>Access our session information and updates.</p>
-      <a href="https://discord.gg/TDNGX4pPN">View Sessions →</a>
+      <p>Access our session information and community activities.</p>
+      <a href="https://discord.gg/TDNGX4pPN" target="_blank">View Sessions →</a>
     </div>
 
     <div class="card">
       <h3>Applications</h3>
-      <p>Explore opportunities and submit applications.</p>
-      <a href="https://discord.gg/6kdxr4x2q">Apply Here →</a>
+      <p>Explore opportunities and submit your applications.</p>
+      <a href="https://discord.gg/6kdxr4x2q" target="_blank">Apply Here →</a>
     </div>
 
     <div class="card">
       <h3>Departments</h3>
-      <p>Explore our departments and opportunities.</p>
-      <a href="https://discord.gg/HCa9hEK9u">View Departments →</a>
+      <p>Explore our departments and available opportunities.</p>
+      <a href="https://discord.gg/HCa9hEK9u" target="_blank">View Departments →</a>
     </div>
 
     <div class="card">
       <h3>Discord Guidelines</h3>
-      <p>Read Discord's official community guidelines.</p>
-      <a href="https://discord.com/guidelines">Read Guidelines →</a>
+      <p>Read the official Discord Community Guidelines.</p>
+      <a href="https://discord.com/guidelines" target="_blank">Read Guidelines →</a>
     </div>
 
   </div>
 </main>
 
-<section class="container" id="about">
-  <h2>About Our Community</h2>
-  <p style="color:#b6c5d8;line-height:1.8">
-    New York City Roleplay is a community dedicated to
-    providing a professional and immersive roleplay
-    experience. We aim to create an enjoyable environment
-    for all members.
+<section class="container" id="ownership">
+
+  <h2>Meet Our Ownership Team</h2>
+
+  <p class="section-description">
+    Meet the founders responsible for establishing,
+    managing and developing New York City Roleplay.
   </p>
+
+  <div class="grid">
+
+    <div class="card owner-card">
+
+      <h3>Jay | Cyber</h3>
+
+      <span class="role">FOUNDER</span>
+
+      <p>
+        Hi, I'm Cyber, one of the founders here at
+        New York City Roleplay. I'm dedicated to helping
+        develop the community, supporting our members
+        and ensuring that we continue to grow.
+      </p>
+
+    </div>
+
+    <div class="card owner-card">
+
+      <h3>Darkness</h3>
+
+      <span class="role">FOUNDER</span>
+
+      <p>
+        Hi, I'm Darkness, one of the founders of
+        New York City Roleplay. I'm committed to helping
+        lead the community, supporting our team and
+        contributing towards the continued development
+        of the server.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="container" id="about">
+
+  <h2>About Our Community</h2>
+
+  <div class="about-box">
+
+    <p>
+      New York City Roleplay is a community dedicated
+      to providing a professional and immersive roleplay
+      experience. We aim to create an enjoyable,
+      welcoming and organised environment for all members.
+
+      Through our departments, community events and
+      dedicated staff team, we continuously work towards
+      improving the experience for everyone.
+    </p>
+
+  </div>
+
 </section>
 
 <footer>
-  <p>NEW YORK CITY ROLEPLAY</p>
-  <p>Official Community Dashboard | Ownership Team</p>
+
+  <strong>NEW YORK CITY ROLEPLAY</strong><br>
+
+  Official Community Dashboard<br>
+
+  Managed by the Ownership Team
+
 </footer>
 
 </body>
